@@ -1,0 +1,89 @@
+<main class="container">
+  <div class="sub">
+    <h2 id="titulo">Editando lista: {{$ctrl.myListName}}</h2>
+    <h3 id="sub-titulo">R$ {{$ctrl.myValue}}</h3>
+  </div>
+  <div class="col-md-4">
+        <div class="panel panel-primary">
+          <div class="panel-heading">
+            <h3 class="panel-title">Meus produtos</h3>
+          </div>
+
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Nome</th>
+                <th>Valor</th>
+                <th class="glyphicon glyphicon-cog"></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr ng-repeat="l in $ctrl.l_compras[$ctrl.idLista]['produtos']">
+                <td>{{l.nome}}</td>
+                <td>R$ {{l.valor}}</td>
+                <td><button type="button" class="btn btn-danger btn-sm" ng-click="$ctrl.removerProduto($index, l.valor)"><span class="glyphicon glyphicon-remove-sign"></span></button></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="col-md-8">
+        <div class="panel panel-primary">
+          <div class="panel-heading">
+            <h3 class="panel-title"></h3>
+          </div>
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <div class="pull-left">
+              <!-- <h4>{{$ctrl.myListName}}</h4>
+              <p>R$ {{$ctrl.myValue}}</p> -->
+            </div>
+            <div class="pull-right">
+              <div class="btn-group">
+                <button type="button" class="btn btn-success btn-filter" data-target="bebidas">Bebidas</button>
+                <button type="button" class="btn btn-warning btn-filter" data-target="biscoito">Biscoito</button>
+                <button type="button" class="btn btn-default btn-filter" data-target="all">Todos</button>
+              </div>
+            </div>
+            <div class="table-container">
+              <table class="tableProd table table-filter">
+                <tbody>
+                  <tr data-status="bebidas" ng-repeat="p in $ctrl.produtos | filter:{ categoria: 'bebidas' }">
+                    <td>
+                      <div class="media">
+                        <a href="#" class="pull-left">
+                          <img src="https://s3.amazonaws.com/uifaces/faces/twitter/fffabs/128.jpg" class="media-photo">
+                        </a>
+                        <div class="media-body">
+                          <span class="media-meta pull-right"><h3>R$ {{p.valor}}</h3></span>
+                          <h4 class="title">{{p.nome}}</h4>
+                          <p class="summary">Subcategoria: {{p.subcategoria}}</p>
+                          <a class="btn btn-lg btn-success" ng-click="$ctrl.addProduto(p.nome,p.valor)"><span class="glyphicon glyphicon-plus"></span> Lista</a>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr data-status="biscoito" ng-repeat="p in $ctrl.produtos | filter:{ categoria: 'biscoito' }">
+                    <td>
+                      <div class="media">
+                        <a href="#" class="pull-left">
+                          <img src="https://s3.amazonaws.com/uifaces/faces/twitter/fffabs/128.jpg" class="media-photo">
+                        </a>
+                        <div class="media-body">
+                          <span class="media-meta pull-right"><h3>R$ {{p.valor}}</h3></span>
+                          <h4 class="title">{{p.nome}}</h4>
+                          <p class="summary">Subcategoria: {{p.subcategoria}}</p>
+                          <a class="btn btn-lg btn-success" ng-click="$ctrl.addProduto(p.nome,p.valor)"><span class="glyphicon glyphicon-plus"></span> Lista</a>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</main>

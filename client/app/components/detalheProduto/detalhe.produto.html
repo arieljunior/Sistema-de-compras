@@ -1,0 +1,20 @@
+<main class="container">
+  <h2>Mercados</h2>
+  <h3>produto: {{$ctrl.nomeProduto}} </h3>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Mercado</th>
+        <th>Endereço(s)</th>
+        <th>Valor</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="p in $ctrl.produtos[$ctrl.idProduto]['mercados']">
+        <td>{{p.nome}}</td>
+        <td>{{p.endereco}}</td>
+        <td>{{p.valor}}</td>
+      </tr>
+    </tbody>
+  </table>
+</main>

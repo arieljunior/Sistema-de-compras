@@ -1,0 +1,27 @@
+<main class="container">
+    <h2>Pesquisar preços</h2>
+    <hr>
+      <div class="col-md-8 col-md-offset-2">
+        <div class="panel panel-default">
+        <table class="tableProd table table-filter">
+          <tbody>
+            <tr ng-repeat="p in $ctrl.produtos">
+              <td>
+                <div class="media">
+                  <a href="#" class="pull-left">
+                    <img src="https://s3.amazonaws.com/uifaces/faces/twitter/fffabs/128.jpg" class="media-photo">
+                  </a>
+                  <div class="media-body">
+                    <!-- <span class="media-meta pull-right"><h3>{{p.valor}}</h3></span> -->
+                    <h4 class="title">{{p.nome}}</h4>
+                    <p class="summary">apartir de: R$ {{p.valor}}</p>
+                    <button ng-click="$ctrl.salvarId($index)">em {{p.mercados.length}} mercados</button>
+                  </div>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        </div>
+      </div>
+</main>

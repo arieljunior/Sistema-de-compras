@@ -1,0 +1,19 @@
+<nav class="navbar navbar-inverse">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                    </div>
+                    <div class="collapse navbar-collapse" id="myNavbar">
+                        <ul class="nav navbar-nav">
+                          <li ui-sref-active="active"><a ui-sref="home">Minha conta</a></li>
+                          <li ui-sref-active="active"><a ui-sref="procurar-mercado">Procurar mercados</a></li>
+                          <li ui-sref-active="active"><a ui-sref="comparar-preco">Pesquisar preços</a></li>
+                          <li ui-sref-active="active"><a ui-sref="lista-compras" ng-if="$ctrl.isLogin">Lista de Compras</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>

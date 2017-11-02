@@ -1,0 +1,9 @@
+<main class="container">
+  <h2>Informe os dados para criar o login</h2>
+  <hr>
+  <form class="form-signin" ng-submit="$ctrl.criarLogin()">
+    <input type="text" class="form-control" placeholder="Login" ng-model="$ctrl.login" required autofocus>
+    <input type="password" class="form-control" placeholder="Senha" ng-model="$ctrl.senha" required>
+    <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit">Criar</button>
+  </form>
+</main>

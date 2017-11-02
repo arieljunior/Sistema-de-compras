@@ -1,0 +1,43 @@
+<main class="container">
+  <h2 style="color: #448aff;text-align: center;"> Lista de Compras </h2>
+<hr>
+    <form class="new-list" method="post"  ng-submit="$ctrl.addLista()">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <div class="input-group buscador-principal">
+
+            <input class="form-control" placeholder="nome da lista" type="text" ng-model="$ctrl.nova_lista.nome" required>
+						<span class="input-group-btn">
+							<input class="btn btn-primary" type="submit" value="Nova Lista"/>
+						</span>
+
+					</div>
+        </div>
+    </form>
+  <table class="table table-striped">
+     <thead>
+        <tr class="row-name">
+           <th>Name</th>
+           <th>Criado em</th>
+           <th>Itens</th>
+           <th>Valor médio</th>
+           <th>Settings</th>
+        </tr>
+     </thead>
+     <tbody>
+        <tr class="row-content" ng-repeat="list in $ctrl.l_compras">
+          <td>{{list.nome}}</td>
+          <td>{{list.data}}</td>
+          <td>{{list.produtos.length}}</td>
+          <td>R$ {{list.valor}}</td>
+           <td>
+              <a class="btn btn-danger edit" ng-click="$ctrl.deleteLista(list.id)"  aria-label="Settings">
+                <i class="glyphicon glyphicon-trash" aria-hidden="true"></i>
+              </a>
+              <a class="btn btn-info edit" ng-click="$ctrl.salvarId($index)" ui-sref="nova-lista" aria-label="Settings">
+                <i class="glyphicon glyphicon-pencil" aria-hidden="true"></i>
+              </a>
+           </td>
+        </tr>
+     </tbody>
+  </table>
+</main>
